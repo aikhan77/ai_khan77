@@ -1,0 +1,48 @@
+#Project 1:
+a=int(input("Please Enter type of operation (1/2/3/4/5): "))
+try:
+    x=float(input("Please enter first number: "))
+    y=float(input("Please enter second number: "))
+
+
+    def addition(x,y):
+        return x+y
+
+    def substruction(x,y):
+        return x-y
+
+    def multiply(x,y):
+        return x*y
+
+    def division(x,y):
+        return x/y
+
+    def modulus(x,y):
+        return x%y
+
+    if a==1:
+    
+        print(f"Addition: {x}+{y} = {addition(x,y)}")
+
+    elif a==2:
+        print(f"Substruction: {x}-{y} = {substruction(x,y)}")
+
+    elif a==3:
+        print(f"Multiply: {x}X{y} = {multiply(x,y)}")
+
+    elif a==4:
+        try:
+        
+            print(f"Division: {x}/{y} = {division(x,y)}")
+        except ZeroDivisionError:
+            print("Second Number cannot be Zero")
+
+    else:
+        try:
+            print(f"Modulus: Reminder of {x} and {y} is {modulus(x,y)}")
+        except ZeroDivisionError:
+            print("Second Number cannot be Zero")
+
+except ValueError:
+    print("Enter number instead of character")
+    
