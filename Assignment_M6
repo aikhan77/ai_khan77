@@ -46,3 +46,25 @@ try:
 except ValueError:
     print("Enter number instead of character")
     
+
+#Project 2
+
+import random
+random_int=random.randint(1,100)
+attempts=1
+
+while True:
+    try:
+        guesed_number=int(input("Please insert your guessed number: "))
+        if guesed_number==random_int:
+            print(f"Congratulations! Your guessed number is matched in {attempts} attempts")
+            break
+        elif guesed_number>random_int:
+            print("Your number is too high")
+            attempts+=1
+
+        else:
+            print("Your number too low")
+            attempts+=1
+    except ValueError:
+        print("Enter a number")
