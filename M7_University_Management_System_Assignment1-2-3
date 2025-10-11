@@ -1,0 +1,63 @@
+#Assignment 1
+
+class person:
+    def __init__(self,name,age):
+        self.name=name
+        self.age=age
+
+    def introduce(self):
+        print(f"Hi I am {self.name}, {self.age} years old")
+
+p1=person("Rahim", 36)
+p1.introduce()
+
+#Assignment 2
+
+class student(person):
+    def __init__(self, name, age,student_id):
+        super().__init__(name, age)
+        self.student_id=student_id
+        self.enrolled_course=[]
+
+    def enrolled(self, course):
+        if course not in self.enrolled_course:
+            self.enrolled_course.append(course)
+        
+        
+    def show_course(self):
+        if not self.enrolled_course:
+            return "No course enrolled"
+        return ", ".join(self.enrolled_course)
+        
+student1=student("Amin",21,2001)
+student1.enrolled("Physics")
+student1.enrolled("Mathematics")
+print(f"I am {student1.name} with ID {student1.student_id} took {student1.show_course()}")
+
+class teacher(person):
+    def __init__(self, name, age, employee_id, subject):
+        super().__init__(name, age)
+        self.employee_id=employee_id
+        self.subject=subject
+
+    def introduce(self):
+        print(f"I am professor {self.name}, teaching {self.subject}")
+
+teacher1=teacher("Faruk",46,3001,"Mathematics")
+teacher1.introduce()
+
+#Assignment 3
+
+def display_role(person):
+    person=person
+
+    if person=="student":
+        print("I wear t-shirt and jeans in the class")
+    elif person=="teacher":
+        print("I wear shirt and trouser in the class")
+    else:
+        print("Input can only be either student or teacher")
+    
+display_role("student")
+
+
